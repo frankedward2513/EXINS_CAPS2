@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Forecasting Dashboard</title>
+    <link rel="stylesheet" href="../../../styles/forecasting.css?version=1.0.1">
+</head>
+<body>
+
+<div class="main-container">
+    <div class="card">
+        <h2>Sales Forecasting Form</h2>
+        
+        <form action="http://127.0.0.1:5000/forecast-form" method="POST">
+            <div class="form-group">
+                <label for="Category">Category:</label>
+                <select name="Category" id="Category" required>
+                    <option value="Shirts">Shirts</option>
+                    <option value="Pants">Pants</option>
+                    <option value="Caps">Caps</option>
+                    <option value="Dress">Dress</option>
+                    <option value="Jackets">Jackets</option>
+                    <option value="Shoes">Shoes</option>
+                    <option value="Shorts">Shorts</option>
+                    <option value="Swimwear">Swimwear</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Date">Target Date:</label>
+                <input type="date" id="Date" name="Date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Lag1">Lag 1 (Sales previous day):</label>
+                <input type="number" step="any" id="Lag1" name="Lag1" placeholder="e.g. 5200" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Lag7">Lag 7 (Sales 7 days ago):</label>
+                <input type="number" step="any" id="Lag7" name="Lag7" placeholder="e.g. 4800" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Rolling7">Rolling 7 (7-day average):</label>
+                <input type="number" step="any" id="Rolling7" name="Rolling7" placeholder="e.g. 5000" required>
+            </div>
+
+            <button type="submit">Predict & Save Forecast</button>
+        </form>
+
+        {% if prediction is defined and prediction %}
+        <div class="result">
+            <strong>Predicted Sales:</strong> ${{ prediction }} <br>
+            <small style="font-size: 12px; color: #555;">Data successfully saved!</small>
+        </div>
+        {% endif %}
+
+        {% if error is defined and error %}
+        <div class="error">
+            <strong>Error:</strong> {{ error }}
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>
