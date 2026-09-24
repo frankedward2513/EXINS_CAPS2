@@ -1,0 +1,70 @@
+.filter-form {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            display: inline-block;
+        }
+
+        .filter-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            margin: 5px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background: #403935;
+            color: white;
+            cursor: pointer;
+        }
+
+        .filter-btn:hover {
+            background: #5a504a;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: #403935;
+            color: white;
+        }
+
+        .edit-btn {
+            background: #007bff;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .delete-btn {
+            background: #dc3545;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .edit-btn:hover {
+            background: #0056b3;
+        }
+
+        .delete-btn:hover {
+            background: #b52b3a;
+        }
