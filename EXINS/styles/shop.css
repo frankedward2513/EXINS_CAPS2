@@ -1,0 +1,204 @@
+    body {
+        background-color: #ffffff00;
+        color: #403935;
+        font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+        margin: 0;
+        padding: 30px;
+    }
+
+    h2 {
+        color: #ffffff;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-bottom: 25px;
+        font-size: 28px;
+    }
+
+    .cat-btn {
+        padding: 10px 20px;
+        border-radius: 50px;
+        border: 1px solid #dcd6d0;
+        cursor: pointer;
+        background: #ffffff;
+        color: #403935;
+        font-size: 13px;
+        font-weight: 600;
+        margin-right: 8px;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .cat-btn:hover,
+    .cat-btn.active {
+        background: #fb6f04;
+        color: #ffffff;
+        border-color: #fb6f04;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(251, 111, 4, 0.2);
+    }
+
+    #product-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    @media (max-width: 768px) {
+        #product-container {
+            grid-template-columns: 1fr;
+            }
+    }
+
+    .product-card {
+        background: rgba(25, 25, 25, 0.15); /* Color of glass */
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        padding: 16px;
+        backdrop-filter: blur(3px); /* Blur intensity of glass */
+        -webkit-backdrop-filter: blur(3px);
+        box-shadow: 
+        0 8px 32px rgba(50, 50, 50, 0.25), /* Outer shadow around the frame */
+        inset 0 1px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.5), /* Glass edge bottom */
+        inset 0 0 5px 2.5px rgba(255, 255, 255, 0.2); /* Inner shadows */
+        transition: all 0.75s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        background-color: rgba(50, 50, 50, 0.5); /* Transition to clearer glass */
+        backdrop-filter: blur(5px); /* Blur intensity of glass */
+        -webkit-backdrop-filter: blur(5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .product-card img {
+        border-radius: 8px;
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        margin-bottom: 12px;
+        background-color: #f9f9f9;
+    }
+
+    .product-card strong {
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .stock-label {
+        font-size: 12px;
+        color: #ffffff;
+        display: block;
+        margin-bottom: 15px;
+        font-weight: 500;
+    }
+
+    #buyOrVisit {
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+    }
+
+    #buyOrVisit a.visit-btn,
+    #buyOrVisit form {
+        flex: 1;
+        margin: 0;
+    }
+
+    a.visit-btn {
+        text-align: center;
+        margin-bottom: 10px;
+        background: rgba(0, 0, 0, 0); /* Color of glass */
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        padding: 10px;
+        color: #ffffff;
+        font-size: 13px;
+        text-decoration: none;
+        cursor: pointer;
+        backdrop-filter: blur(20px); /* Blur intensity of glass */
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.1), /* Outer shadow around the frame */
+            inset 0 1px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+            inset 0 -1px 0 rgba(255, 255, 255, 0.5), /* Glass edge bottom */
+            inset 0 0 20px 10px rgba(255, 255, 255, 0); /* Inner shadows */
+        transition: 0.75s ease;
+    }
+
+    a.visit-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+    } 
+
+    .product-card form input[type="submit"] {
+        width: 100%;
+        background: rgba(0, 0, 0, 0); /* Color of glass */
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        padding: 10px;
+        color: #ffffff;
+        font-size: 13px;
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0); /* Color of glass */
+        backdrop-filter: blur(20px); /* Blur intensity of glass */
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.1), /* Outer shadow around the frame */
+            inset 0 1px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+            inset 0 -1px 0 rgba(255, 255, 255, 0.5), /* Glass edge bottom */
+            inset 0 0 20px 10px rgba(255, 255, 255, 0); /* Inner shadows */
+        transition: 0.75s ease;
+    }
+
+    .product-card form input[type="submit"]:hover {
+    background-color: rgba(224, 99, 3, 0.5); /* Color of glass */
+    backdrop-filter: blur(20px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1), /* Outer shadow around the frame */
+        inset 0 1px 0 rgba(255, 255, 255, 0.5), /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.5), /* Glass edge bottom */
+        inset 0 0 20px 10px rgba(255, 255, 255, 0); /* Inner shadows */
+    }
+
+    .category_button{
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+        padding: 10px;
+        color:#ffffff;
+        background: rgba(0, 0, 0, 0); /* Color of glass */
+        backdrop-filter: blur(3px); /* Blur intensity of glass */
+        border-radius: 8px;
+        -webkit-backdrop-filter: blur(3px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.1), /* Outer shadow around the frame */
+            inset 0 1px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+            inset 0 -1px 0 rgba(255, 255, 255, 0.5), /* Glass edge bottom */
+            inset 0 0 20px 10px rgba(255, 255, 255, 0); /* Inner shadows */
+        transition: 0.75s ease;
+
+    }
+
+    .category_button:hover{
+        background-color: rgba(200, 200, 200, 0.5); /* Transition to clearer glass */
+        backdrop-filter: blur(20px); /* Blur intensity of glass */
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.1), /* Outer shadow around the frame */
+            inset 0 1px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+            inset 0 -1px 0 rgba(255, 255, 255, 0.5), /* Glass edge bottom */
+            inset 0 0 20px 10px rgba(255, 255, 255, 0); /* Inner shadows */
+    }

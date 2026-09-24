@@ -1,0 +1,325 @@
+/* Background */
+body {
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0;
+    padding: 20px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    color: #ffffff;
+}
+
+/* Form Header texts */
+h1 {
+    text-align: center;
+    color: #ffffff;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-weight: lighter;
+}
+
+h2 {
+    text-align: left;
+    color: #ffffff;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-weight: lighter;
+}
+
+/* Main Form glass designs */
+form {
+    padding: 40px;
+    margin: auto;
+    max-width: 500px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(3px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(3px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        /* 0 8px 32px rgba(50, 50, 50, 0.25),
+        inset 0 -2px 20px 2.5px rgba(220, 220, 220, 0.2); */
+        0 8px 32px rgba(50, 50, 50, 0.25),  /* Outer shadow around the frame */
+        inset 0 1px 0 rgba(255, 255, 255, 1),  /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),  /* Glass edge bottom */
+        inset 0 0 5px 2.5px rgba(255, 255, 255, 0.1);  /* Inner shadows */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.45s ease; 
+}
+
+
+/* Form  animation */
+form:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Transition to clearer glass */
+    box-shadow: 
+        /* 0 8px 32px rgba(50, 50, 50, 0.25),
+        inset 0 -2px 20px 2.5px rgba(220, 220, 220, 0.2); */
+        0 8px 32px rgba(50, 50, 50, 0.25),  /* Outer shadow around the frame */
+        inset 0 1px 0 rgba(255, 255, 255, 1),  /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),  /* Glass edge bottom */
+        inset 0 0 5px 2.5px rgba(255, 255, 255, 0.35);  /* Inner shadows */
+    transform: translateY(-0.5px);
+}
+
+/* Form glass lines for design */ 
+form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+form::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+
+/* Input fields */
+input,
+select {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    background: rgba(0, 0, 0, 0); /* Color of glass */
+    backdrop-filter: blur(20px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1), /* Outer shadow around the frame */
+        inset 0 0.5px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.5), /* Glass edge bottom */
+        inset 0 0 20px 10px rgba(255, 255, 255, 0); /* Inner shadows */
+    position: relative;
+    overflow: hidden;
+}
+
+form input:focus,
+form select:focus {
+    border-color: rgba(255, 255, 255, 1) !important;
+    outline: none !important;
+    box-shadow: 0 0 5px rgba(251, 111, 4, 0.2);
+}
+
+/* Text inputs users typed inside the input boxes */
+input,
+select,
+textarea {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    color: white;
+}
+
+
+p {
+    text-align: center;
+    font-size: 24px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    color: #ffffff;
+}
+
+#submitorcancel {
+    display: flex;
+    gap: 20px;
+}
+
+/* Submit button */
+#submitorcancel input {
+    flex: 1;
+    margin-bottom: 0;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1); /* Color of glass */
+    backdrop-filter: blur(20px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1), /* Outer shadow around the frame */
+        inset 0 0.5px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.5), /* Glass edge bottom */
+        inset 0 0 20px 10px rgba(255, 255, 255, 0); /* Inner shadows */
+}
+
+input[type="submit"],
+#submit,
+#reset {
+    background-color: #fb6f04;
+    border-radius: 8px;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    transition: all 0.25s ease-in-out;
+}
+
+input[type="submit"]:hover,
+#submit:hover {
+    background-color: rgba(224, 99, 3, 0.5); /* Color of glass */
+    backdrop-filter: blur(20px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1), /* Outer shadow around the frame */
+        inset 0 1px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1), /* Glass edge bottom */
+        inset 0 0 20px 10px rgba(255, 255, 255, 0); /* Inner shadows */
+    transform: translateY(-1px);
+}
+
+/* Cancel Button */
+#reset {
+    background-color: #ffffff;
+    color: #ffffff;
+    border: 1px solid #fb6f04;
+}
+
+#reset:hover {
+    background-color: rgba(182, 33, 33, 0.643);
+    backdrop-filter: blur(20px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1), /* Outer shadow around the frame */
+        inset 0 1px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1), /* Glass edge bottom */
+        inset 0 0 20px 10px rgba(255, 255, 255, 0); /* Inner shadows */
+    transform: translateY(-1px);
+}
+
+/* Input labels */
+label {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 15px;
+    color: #f8f8f8;
+    padding-top: 5px;
+    display: block;
+    font-weight: normal;
+}
+
+/* Input hints */
+#expense_category, #expense_date{
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    color:rgb(200, 200, 200);
+}
+
+/* Choose File button design */
+#myfile{
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    color:rgb(200, 200, 200);
+}
+
+input[type="file"] {
+    color: white;
+    font-size: 14px;
+}
+
+input[type="file"]::file-selector-button {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: 0.3s ease;
+    background: rgba(0, 0, 0, 0); /* Color of glass */
+    backdrop-filter: blur(3px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1), /* Outer shadow around the frame */
+        inset 0 0.5px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.5), /* Glass edge bottom */
+        inset 0 0 20px 10px rgba(255, 255, 255, 0); /* Inner shadows */
+    transition: 0.5s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: rgba(200, 200, 200, 0.5); /* Transition to clearer glass */
+    backdrop-filter: blur(20px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1), /* Outer shadow around the frame */
+        inset 0 0.5px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.5), /* Glass edge bottom */
+        inset 0 0 20px 10px rgba(255, 255, 255, 0); /* Inner shadows */
+}
+
+select > option {
+    background-color: #000000d1
+}
+
+#description {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-family: inherit;   /* textareas default to monospace otherwise */
+    font-size: 0.875rem;
+    resize: vertical;
+}
+
+#description::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#description:focus {
+    outline: none;
+    border-color: #fb6f04;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+textarea{
+    width: 100%;
+}
+
+/*
+.background_vid {
+    position:fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+}
+
+.custom-select select{
+    appearance: none;
+    background-color: #fafafa00;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 40px;
+    border-radius: 25px;
+    margin: auto;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 3px, 3px, 3px rgba(122, 113, 113, 0.01);
+}
+*/

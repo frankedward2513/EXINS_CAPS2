@@ -1,0 +1,200 @@
+body {
+    background-color: #ffffff00;
+    margin: 0;
+    padding: 30px 20px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+form {
+    padding: 35px 40px;
+    margin: auto;
+    width: 100%;
+    max-width: 550px;
+    background: rgba(25, 25, 25, 0.15); /* Color of glass */
+    backdrop-filter: blur(3px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(3px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        0 8px 32px rgba(50, 50, 50, 0.25), /* Outer shadow around the frame */
+        inset 0 1px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.5), /* Glass edge bottom */
+        inset 0 0 5px 2.5px rgba(255, 255, 255, 0.2); /* Inner shadows */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.75s ease; 
+}
+
+form:hover {
+    background-color: rgba(50, 50, 50, 0.5); /* Transition to clearer glass */
+    backdrop-filter: blur(5px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* Form glass lines for design */
+form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+form::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+
+p {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 2px solid #f4f4f4;
+    padding-bottom: 15px;
+}
+
+label {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 15px;
+    color: #f8f8f8;
+    padding-top: 8px;
+    display: block;
+    font-weight: normal;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    background: rgba(0, 0, 0, 0); /* Color of glass */
+    backdrop-filter: blur(20px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1), /* Outer shadow around the frame */
+        inset 0 0.5px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.5), /* Glass edge bottom */
+        inset 0 0 20px 10px rgba(255, 255, 255, 0); /* Inner shadows */
+    position: relative;
+    overflow: hidden;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: rgba(255, 255, 255, 1) !important;
+    outline: none !important;
+    box-shadow: 0 0 5px rgba(251, 111, 4, 0.2);
+}
+
+input[readonly] {
+    background: rgba(0, 0, 0, 0); /* Color of glass */
+    color: #555;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    backdrop-filter: blur(20px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1), /* Outer shadow around the frame */
+        inset 0 0.5px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.5), /* Glass edge bottom */
+        inset 0 0 20px 10px rgba(255, 255, 255, 0); /* Inner shadows */
+    position: relative;
+    overflow: hidden;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Input hints */
+#customer_name, #qty, #transactionType, #totalAmount, #remarks, #pricePerUnit{
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    color:rgb(200, 200, 200);
+}
+
+#changeDisplay {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px 0 15px 0;
+    color: #fb6f04;
+}
+
+#submitorcancel {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+#submitorcancel input,
+#submit {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    flex: 1;
+    border-radius: 8px;
+    padding: 14px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 0;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1); /* Color of glass */
+    backdrop-filter: blur(20px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1), /* Outer shadow around the frame */
+        inset 0 0.5px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.5), /* Glass edge bottom */
+        inset 0 0 20px 10px rgba(255, 255, 255, 0); /* Inner shadows */
+
+}
+
+#submitorcancel input:hover,
+#submit:hover {
+    background-color: rgba(224, 99, 3, 0.5); /* Color of glass */
+    backdrop-filter: blur(20px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1), /* Outer shadow around the frame */
+        inset 0 1px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1), /* Glass edge bottom */
+        inset 0 0 20px 10px rgba(255, 255, 255, 0); /* Inner shadows */
+    transform: scale(1.01);
+}

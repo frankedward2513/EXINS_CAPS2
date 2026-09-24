@@ -1,0 +1,214 @@
+*{
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    color: white;
+}
+
+body {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    background: transparent;
+    margin: 0;
+    padding: 20px;
+}
+.main-container {
+    max-width: 800px;
+    margin: auto;
+}
+.card {
+    background: transparent;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    backdrop-filter: blur(3px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(3px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        /* 0 8px 32px rgba(50, 50, 50, 0.25),
+        inset 0 -2px 20px 2.5px rgba(220, 220, 220, 0.2); */
+        0 8px 32px rgba(50, 50, 50, 0.25),  /* Outer shadow around the frame */
+        inset 0 1px 0 rgba(255, 255, 255, 1),  /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),  /* Glass edge bottom */
+        inset 0 0 5px 2.5px rgba(255, 255, 255, 0.1);  /* Inner shadows */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.45s ease; 
+}
+
+/* Glass lines for design */ 
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+h2 {
+    text-align: center;
+    font-weight: lighter;
+    color: #ffffff;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px; 
+    font-weight: lighter; 
+    color: #ffffff; 
+}
+input, select {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    background: transparent;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    backdrop-filter: blur(20px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1), /* Outer shadow around the frame */
+        inset 0 0.5px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.5), /* Glass edge bottom */
+        inset 0 0 20px 10px rgba(255, 255, 255, 0); /* Inner shadows */
+    position: relative;
+    overflow: hidden;
+}
+
+select > option {
+    background-color: #000000d1
+}
+
+button {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1); /* Color of glass */
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    backdrop-filter: blur(20px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1), /* Outer shadow around the frame */
+        inset 0 0.5px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.5), /* Glass edge bottom */
+        inset 0 0 20px 10px rgba(255, 255, 255, 0); /* Inner shadows */
+    transition: 0.5s;
+}
+
+button:hover {
+    background: rgba(0, 86, 179, 0.5);
+    transform: translateY(-1px);
+}
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #ccffbc;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: lighter;
+    backdrop-filter: blur(3px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(3px);
+    box-shadow: 
+        /* 0 8px 32px rgba(50, 50, 50, 0.25),
+        inset 0 -2px 20px 2.5px rgba(220, 220, 220, 0.2); */
+        0 8px 32px rgba(50, 50, 50, 0.25),  /* Outer shadow around the frame */
+        inset 0 1px 0 rgba(255, 255, 255, 1),  /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),  /* Glass edge bottom */
+        inset 0 0 5px 2.5px rgba(255, 255, 255, 0.1);  /* Inner shadows */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease; 
+}
+
+.result:hover {
+    color: #35b352;
+    box-shadow: 
+        /* 0 8px 32px rgba(50, 50, 50, 0.25),
+        inset 0 -2px 20px 2.5px rgba(220, 220, 220, 0.2); */
+        0 8px 32px rgba(50, 50, 50, 0.25),  /* Outer shadow around the frame */
+        inset 0 1px 0 rgba(255, 255, 255, 1),  /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),  /* Glass edge bottom */
+        inset 0 0 5px 2.5px rgba(255, 255, 255, 0.25);  /* Inner shadows */
+        transform: translateY(-2px);
+    transform: translateY(-1px);
+
+}
+
+.error {
+    margin-top: 20px;
+    padding: 15px;
+    color: #ffbcbc;
+    border-radius: 4px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: lighter;
+    backdrop-filter: blur(3px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(3px);
+    box-shadow: 
+        /* 0 8px 32px rgba(50, 50, 50, 0.25),
+        inset 0 -2px 20px 2.5px rgba(220, 220, 220, 0.2); */
+        0 8px 32px rgba(50, 50, 50, 0.25),  /* Outer shadow around the frame */
+        inset 0 1px 0 rgba(255, 255, 255, 1),  /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),  /* Glass edge bottom */
+        inset 0 0 5px 2.5px rgba(255, 255, 255, 0.1);  /* Inner shadows */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease; 
+}
+
+.error:hover {
+    color: #b33535;
+    box-shadow: 
+        /* 0 8px 32px rgba(50, 50, 50, 0.25),
+        inset 0 -2px 20px 2.5px rgba(220, 220, 220, 0.2); */
+        0 8px 32px rgba(50, 50, 50, 0.25),  /* Outer shadow around the frame */
+        inset 0 1px 0 rgba(255, 255, 255, 1),  /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),  /* Glass edge bottom */
+        inset 0 0 5px 2.5px rgba(255, 255, 255, 0.25);  /* Inner shadows */
+        transform: translateY(-2px);
+    transform: translateY(-1px);
+
+}
+
+p{
+    color: white;
+}

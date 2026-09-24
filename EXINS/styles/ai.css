@@ -1,0 +1,118 @@
+/* Background & Global Styles */
+body {
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0;
+    padding: 20px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    color: #ffffff;
+}
+
+.container {
+        padding: 40px;
+    margin: auto;
+    width: 100%;
+    max-width: 500px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(3px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(3px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+            0 8px 32px rgba(50, 50, 50, 0.25),
+        inset 0 -2px 20px 2.5px rgba(220, 220, 220, 0.2);
+
+       /* 0 8px 32px rgba(50, 50, 50, 0.25),  Outer shadow around the frame 
+        inset 0 1px 0 rgba(255, 255, 255, 1),  Glass edge top 
+        inset 0 -1px 0 rgba(255, 255, 255, 0.5),  Glass edge bottom 
+        inset 0 0 5px 2.5px rgba(255, 255, 255, 0.1);  Inner shadows */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease; 
+}
+
+/* Glassmorphism Card Style (Matching your Form) */
+.card {
+    padding: 40px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(3px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(3px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        0 8px 32px rgba(50, 50, 50, 0.25),  /* Outer shadow around the frame */
+        inset 0 1px 0 rgba(255, 255, 255, 1),  /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),  /* Glass edge bottom */
+        inset 0 0 5px 2.5px rgba(255, 255, 255, 0.1);  /* Inner shadows */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.45s ease; 
+}
+
+/* Card Hover Animation */
+.card:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Transition to clearer glass */
+    box-shadow: 
+        0 8px 32px rgba(50, 50, 50, 0.25),  
+        inset 0 1px 0 rgba(255, 255, 255, 1),  
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),  
+        inset 0 0 5px 2.5px rgba(255, 255, 255, 0.35);  
+    transform: translateY(-0.5px);
+}
+
+/* Glass Edge Highlight Lines */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.8),
+        transparent
+    );
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.8),
+        transparent,
+        rgba(255, 255, 255, 0.3)
+    );
+}
+
+h1 {
+    margin-top: 0;
+    color: #ffffff;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.analysis {
+    white-space: pre-wrap;
+    line-height: 1.7;
+    font-size: 16px;
+    color: #f8f8f8;
+}
+
+/* Glass-styled Error Box */
+.error {
+    color: #ff99a8;
+    background: rgba(176, 0, 32, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 100, 100, 0.3);
+    box-shadow: 0 8px 32px rgba(176, 0, 32, 0.15);
+}

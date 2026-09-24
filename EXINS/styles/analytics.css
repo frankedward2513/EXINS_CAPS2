@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #00000000; /* Softened background for better card contrast */
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1 {
+    font-weight: normal;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.filter {
+    background: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.filter form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter input {
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.filter button {
+    padding: 7px 15px;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.filter a {
+    padding: 7px 15px;
+    background: #ddd;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+/* Card Glass Design */
+.card {
+    background: transparent;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    backdrop-filter: blur(3px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        0 8px 32px rgba(50, 50, 50, 0.25), /* Outer shadow around the frame */
+        inset 0 1px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.5), /* Glass edge bottom */
+        inset 0 0 5px 2.5px rgba(255, 255, 255, 0.2); /* Inner shadows */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.75s ease; 
+
+}
+/* Card Glass Opacity Animation */
+.card:hover {
+    background-color: rgba(50, 50, 50, 0.5); /* Transition to clearer glass */
+    backdrop-filter: blur(5px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* Card glass lines for design */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+/* Fix for stretched charts */
+.card canvas {
+    max-height: 350px; /* Prevents it from getting too tall */
+    width: 100% !important;
+    height: auto !important; /* Lets the height scale naturally */
+}

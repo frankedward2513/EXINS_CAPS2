@@ -1,0 +1,96 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.25); /* Color of glass */
+    backdrop-filter: blur(3px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        0 8px 32px rgba(50, 50, 50, 0.25), /* Outer shadow around the frame */
+        inset 0 1px 0 rgba(255, 255, 255, 1), /* Glass edge top */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.5), /* Glass edge bottom */
+        inset 0 0 5px 2.5px rgba(150, 150, 150, 0.1); /* Inner shadows */
+    transition: all 0.5s ease;
+}
+
+/* Form glass lines for design */
+table::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+table::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    font-weight: bold;
+}
+
+th {
+    color: white;
+    padding: 14px 18px;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(5px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.25); /* Color of glass */
+    transition: all 0.5s ease;
+}
+
+th:hover {
+    background-color: rgba(251, 111, 4, 0.25);
+}
+
+td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #eee;
+    color: #ffffff;
+    font-size: 14px;
+    backdrop-filter: blur(5px); /* Blur intensity of glass */
+    -webkit-backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.05); /* Color of glass */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.5s ease-in-out;
+}
+
+tr:nth-child(even) {
+    background-color: #faf9f600;
+    transition: all 0.5s ease-in-out;
+}
+
+tr:hover {
+    background-color: rgba(25, 25, 25, 0.1); /* Transition to clearer glass */
+}

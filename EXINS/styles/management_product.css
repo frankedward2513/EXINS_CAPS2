@@ -1,0 +1,25 @@
+.cat-btn {
+            padding: 8px 18px;
+            border-radius: 50px;
+            border: 1px solid #5E503F;
+            cursor: pointer;
+            background: #151413;
+            color: #EAE0D5;
+            font-size: 13px;
+            font-weight: 500;
+            margin-right: 6px;
+            margin-bottom: 15px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cat-btn:hover,
+        .cat-btn.active {
+            background: #C6AC8E;
+            color: #0A0908;
+            border-color: #C6AC8E;
+        }
+
+        .filter-container {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
