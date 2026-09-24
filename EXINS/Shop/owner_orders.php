@@ -15,9 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['order_id'], $_POST['n
         $update_stmt->execute();
         $update_stmt->close();
 
-        // Retain the current filter when redirecting back
+        // Retain the current filter when redirecting back using relative dynamic target
         $current_filter = isset($_POST['current_filter']) ? urlencode($_POST['current_filter']) : 'All';
-        header("Location: owner_orders.php?status=" . $current_filter . "&updated=1");
+        $redirect_page = basename($_SERVER['PHP_SELF']);
+        header("Location: " . $redirect_page . "?status=" . $current_filter . "&updated=1");
         exit();
     }
 }
@@ -51,11 +52,22 @@ if (!$result) {
     <title>Customer Orders Management - EXINS</title>
     <link rel="stylesheet" href="../styles/system.css">
     <style>
+        html,
+        body {
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            overflow-y: auto;
+            /* Allow the content inside iframe to scroll */
+        }
+
         .admin-container {
             max-width: 1200px;
-            margin: 30px auto;
+            margin: 0 auto;
             padding: 20px;
             font-family: Arial, sans-serif;
+            box-sizing: border-box;
         }
 
         .order-card {
@@ -166,13 +178,12 @@ if (!$result) {
     </style>
 </head>
 
-<body style="background: #f1f5f9; margin: 0; padding: 20px;">
+<body>
     <div class="admin-container">
 
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <h2 style="margin: 0; color: #1e293b;">Customer Orders Management</h2>
-            <a href="dashboard.php" style="color: #2563eb; text-decoration: none; font-weight: bold;">&larr; Back to
-                Dashboard</a>
+            <a href="shop.php">Back to Shop</a>
         </div>
 
         <!-- Filter Buttons Bar -->
@@ -204,7 +215,8 @@ if (!$result) {
 
         <?php if ($result->num_rows === 0): ?>
             <p style="color: #64748b; text-align: center; padding: 40px 0;">No customer orders found for status:
-                <strong><?php echo htmlspecialchars($selected_filter); ?></strong></p>
+                <strong><?php echo htmlspecialchars($selected_filter); ?></strong>
+            </p>
         <?php else: ?>
             <?php while ($order = $result->fetch_assoc()): ?>
                 <div class="order-card">
@@ -298,9 +310,8 @@ if (!$result) {
                     <?php endif; ?>
 
                     <!-- Update Status Form -->
-                    <form action="owner_orders.php" method="POST" class="status-form">
+                    <form action="" method="POST" class="status-form">
                         <input type="hidden" name="order_id" value="<?php echo $order['id']; ?>">
-                        <!-- Pass along the current active filter so the page stays on the same filter after updating -->
                         <input type="hidden" name="current_filter" value="<?php echo htmlspecialchars($selected_filter); ?>">
 
                         <label for="new_status_<?php echo $order['id']; ?>"

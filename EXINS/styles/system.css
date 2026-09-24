@@ -12,7 +12,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    overflow: hidden; /* Prevents double scrollbars on the main window */
+    overflow: hidden; /* Prevents outer page double scrollbars */
 }
 
 nav {
@@ -25,7 +25,6 @@ nav {
     grid-template-columns: auto 1fr auto; /* left | center | right */
     align-items: center;
     
-    /* Changed from relative to sticky/fixed so it stays at the top */
     position: fixed;
     top: 0;
     left: 0;
@@ -83,7 +82,7 @@ nav h1 {
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 nav > ul {
@@ -181,13 +180,13 @@ nav > ul > li:hover > .submenu {
     background: rgba(255, 255, 255, 0.3);
 }
 
-/* FIXED IFRAME LAYOUT */
 iframe {
-    position: relative; /* Changed from absolute to respect margins */
+    position: relative;
     display: block;
     width: 100%;
-    height: calc(100vh - 75px); /* Fills screen minus the navbar height */
-    margin-top: 75px;           /* Pushes it down directly under the navbar */
+    height: calc(100vh - 75px); /* Set exact height bounded by viewport minus navbar */
+    margin-top: 75px;
     border: none;
     background-color: transparent;
+    overflow-y: auto; /* Enables vertical scrolling within iframe frame */
 }
